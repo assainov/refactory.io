@@ -5,4 +5,5 @@ module.exports = {
     '**/__tests__/**/*.ts',
     '**/?(*.)+(spec|test).ts',
   ] /* test only ts files */,
+  coveragePathIgnorePatterns: ['/node_modules/', '/dist/'],
 };
