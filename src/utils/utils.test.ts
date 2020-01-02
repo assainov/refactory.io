@@ -1,6 +1,8 @@
 jest.mock('express');
-import { applyMiddleware, applyRoutes, Route } from '.';
-import express from 'express';
+import express, { Router } from 'express';
+
+import { applyMiddleware, applyRoutes } from '.';
+import { Route } from '../types/route';
 
 describe('applyMiddleware utility', () => {
   const router = express();
@@ -27,9 +29,9 @@ describe('applyMiddleware utility', () => {
 describe('applyRoutes utility', () => {
   it('should call method with handler', () => {
     const mockGet = jest.fn();
-    const expressMock = {
+    const expressMock = ({
       get: mockGet,
-    } as any;
+    } as unknown) as Router;
 
     const route: Route = {
       path: '/',
