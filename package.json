@@ -7,8 +7,23 @@
     "start": "concurrently \"npm:watch:*\"",
     "watch:ts": "tsc -w",
     "watch:sass": "node-sass -w ./src/assets/scss/main.scss ./dist/public/css/main.css",
-    "watch:node": "nodemon ./dist/server.js",
+    "watch:node": "nodemon --inspect=0.0.0.0 ./dist/server.js",
+    "prod": "concurrently \"npm:build:*\"",
+    "build:ts": "tsc",
+    "build:sass": "node-sass ./src/assets/scss/main.scss ./dist/public/css/main.css",
+    "lint": "eslint \"**/*.{js,ts}\" --fix",
     "test": "mocha src/**/**.spec.js"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "eslint \"**/*.{js,ts}\" --fix",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "repository": {
     "type": "git",
@@ -36,6 +51,8 @@
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.9.0",
     "eslint-plugin-prettier": "^3.1.2",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.5.0",
     "node-sass": "^4.13.0",
     "nodemon": "^2.0.2",
     "prettier": "^1.19.1",

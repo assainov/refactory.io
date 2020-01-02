@@ -9,6 +9,8 @@ applyRoutes(routes, router);
 
 const { PORT = 3000 } = process.env;
 
+console.log('hi from server');
+
 const server = router.listen(PORT, () => {
   console.info(`Server is running at port ${PORT}...`);
 });
