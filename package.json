@@ -14,8 +14,8 @@
     "build:ts": "tsc",
     "build:sass": "node-sass ./src/public/scss/main.scss ./dist/public/css/main.css compressed",
     "build:copy": "npm run copy-public-files",
-    "lint": "eslint \"**/*.{js,ts}\" --fix",
-    "copy-public-files": "ts-node copyPublicFiles.ts",
+    "lint": "tsc --noEmit && eslint \"**/*.{js,ts}\" --fix",
+    "copy-public-files": "ts-node copyDistFiles.ts",
     "test": "jest"
   },
   "lint-staged": {
@@ -50,6 +50,7 @@
     "@types/jest": "^24.0.25",
     "@types/node": "^13.1.2",
     "@types/shelljs": "^0.8.6",
+    "@types/supertest": "^2.0.8",
     "@typescript-eslint/eslint-plugin": "^2.14.0",
     "@typescript-eslint/parser": "^2.14.0",
     "concurrently": "^5.0.2",
@@ -63,6 +64,7 @@
     "node-sass": "^4.13.0",
     "nodemon": "^2.0.2",
     "prettier": "^1.19.1",
+    "supertest": "^4.0.2",
     "ts-jest": "^24.2.0",
     "ts-node": "^8.5.4",
     "typescript": "^3.7.4"
@@ -72,6 +74,7 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "mini-css-extract-plugin": "^0.9.0",
+    "pug": "^2.0.4",
     "shelljs": "^0.8.3"
   }
 }
