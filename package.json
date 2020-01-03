@@ -16,7 +16,7 @@
     "build:sass": "node-sass ./src/public/scss/main.scss ./dist/public/css/main.css compressed",
     "build:copy": "npm run copy-public-files",
     "lint": "tsc --noEmit && eslint \"**/*.{js,ts}\" --fix --max-warnings=0",
-    "copy-public-files": "ts-node copyDistFiles.ts",
+    "copy-public-files": "ts-node copyPublicFiles.ts",
     "test": "jest",
     "up": "docker-compose up",
     "down": "docker-compose down"
