@@ -2,13 +2,14 @@
   "name": "refactory.io",
   "version": "1.0.0",
   "description": "A community of developers who always strive for improvement.",
-  "main": "dist/index.js",
+  "main": "dist/server.js",
   "scripts": {
     "start": "npm run copy-public-files && npm run watch",
     "watch": "concurrently \"npm:watch:*\"",
     "watch:ts": "tsc -w",
     "watch:sass": "node-sass -w ./src/public/scss/main.scss ./dist/public/css/main.css",
-    "watch:node": "nodemon --inspect=0.0.0.0 ./dist/server.js",
+    "watch:node": "PORT=8000 nodemon --inspect=0.0.0.0 ./dist/server.js",
+    "watch:browser": "browser-sync start --proxy=localhost:8000 --files='dist/public/**/*.css, **/*.pug, dist/public/**/*.js' --ignore=node_modules --reload-delay 10 --no-ui --no-notify",
     "serve": "node ./dist/server.js",
     "build": "concurrently \"npm:build:*\"",
     "build:ts": "tsc",
@@ -16,7 +17,9 @@
     "build:copy": "npm run copy-public-files",
     "lint": "tsc --noEmit && eslint \"**/*.{js,ts}\" --fix --max-warnings=0",
     "copy-public-files": "ts-node copyDistFiles.ts",
-    "test": "jest"
+    "test": "jest",
+    "up": "docker-compose up",
+    "down": "docker-compose down"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": [
@@ -53,6 +56,7 @@
     "@types/supertest": "^2.0.8",
     "@typescript-eslint/eslint-plugin": "^2.14.0",
     "@typescript-eslint/parser": "^2.14.0",
+    "browser-sync": "^2.26.7",
     "concurrently": "^5.0.2",
     "css-loader": "^3.4.0",
     "eslint": "^6.8.0",
