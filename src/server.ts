@@ -1,6 +1,6 @@
 import express from 'express';
 import middleware from './middleware';
-import routes from './services';
+import routes from './pages';
 import { applyMiddleware, applyRoutes } from './utils';
 
 export const router = express();
