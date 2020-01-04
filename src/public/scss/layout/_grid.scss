@@ -1,7 +1,31 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    & > .layout {
+        flex-grow: 1;
+    }
+}
+
 .container {
     max-width: 100rem;
     margin-right: auto;
     margin-left: auto;
     padding-right: 3rem;
     padding-left: 3rem;
+}
+
+.layout {
+    display: flex;
+    justify-content: space-between;
+    &__main {
+        flex-grow: 1;
+        flex-shrink: 0;
+        margin-right: 4rem;
+    }
+    &__sidebar {
+        flex: 0 0 30rem;
+    }
+    margin-top: 4rem;
 }

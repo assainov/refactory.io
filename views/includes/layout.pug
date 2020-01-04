@@ -13,7 +13,11 @@ html(lang='en')
   body
     include header
 
-    block content
+    .layout.container
+      .layout__main
+        block content
+      .layout__sidebar
+        include sidebar
 
     include footer
 
