@@ -10,7 +10,7 @@ router.set('view engine', 'pug');
 applyMiddleware(middleware, router);
 applyRoutes(routes, router);
 
-const port = process.env.NODE_ENV === 'test' ? 3001 : 3000;
+const port = process.env.NODE_ENV === 'test' ? 8001 : 8000;
 
 const server = router.listen(port, () => {
   console.info(`Server is running at port ${port}...`);
