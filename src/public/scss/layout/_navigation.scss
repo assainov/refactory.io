@@ -1,0 +1,19 @@
+.navigation {
+    &__list {
+        display: flex;
+        align-items: center;
+    }
+
+    &__link {
+        margin-left: 2.5rem;
+        text-decoration: none;
+        &:link,
+        &:visited,
+        &:active {
+            color: $color-text-lighter;
+        }
+        &:hover {
+            color: $color-text-highlight;
+        }
+    }
+}

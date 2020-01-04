@@ -1,0 +1,17 @@
+.header {
+    height: 6rem;
+
+    &__wrapper {
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__logo {
+        text-transform: uppercase;
+        font-weight: bold;
+        color: $color-text-highlight;
+        text-decoration: none;
+    }
+}

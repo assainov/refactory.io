@@ -1,0 +1,23 @@
+.button {
+    &,
+    &:link,
+    &:visited {
+        text-transform: uppercase;
+        line-height: 3.5rem;
+        padding: 1rem;
+        border: 1px solid $color-text-lighter;
+        border-radius: 2px;
+        margin-left: 1.5rem;
+        font-size: 1.4rem;
+    }
+
+    &--highlight {
+        &,
+        &:link,
+        &:visited {
+            border-color: $color-text-highlight;
+            background-color: $color-text-highlight;
+            color: $color-white;
+        }
+    }
+}

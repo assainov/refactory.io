@@ -1,6 +1,11 @@
-header
-    div.container
-        nav
-            ul
+header.header
+    div.container.header__wrapper
+        a.header__logo(href="/") Refactory.io
+        nav.navigation
+            ul.navigation__list
                 li
-                    a(href="/") Home
+                    a.navigation__link(href="/about") About
+                li
+                    a.navigation__link.button(href="/log-in") Log in
+                li
+                    a.navigation__link.button.button--highlight(href="/sign-up") Sign up
