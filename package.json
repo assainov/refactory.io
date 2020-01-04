@@ -8,7 +8,7 @@
     "watch": "concurrently \"npm:watch:*\"",
     "watch:ts": "tsc -w",
     "watch:sass": "node-sass -w ./src/public/scss/main.scss ./dist/public/css/main.css",
-    "watch:node": "PORT=8000 nodemon --inspect=0.0.0.0 ./dist/server.js",
+    "watch:node": "nodemon --inspect=0.0.0.0 ./dist/server.js",
     "watch:browser": "browser-sync start --proxy=localhost:8000 --files='dist/public/**/*.css, **/*.pug, dist/public/**/*.js' --ignore=node_modules --reload-delay 10 --no-ui --no-notify",
     "serve": "node ./dist/server.js",
     "build": "concurrently \"npm:build:*\"",
@@ -17,7 +17,7 @@
     "build:copy": "npm run copy-public-files",
     "lint": "tsc --noEmit && eslint \"**/*.{js,ts}\" --fix --max-warnings=0",
     "copy-public-files": "ts-node copyPublicFiles.ts",
-    "test": "jest",
+    "test": "NODE_ENV=test jest",
     "up": "docker-compose up",
     "down": "docker-compose down"
   },

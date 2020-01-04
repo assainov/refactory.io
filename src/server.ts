@@ -10,10 +10,10 @@ router.set('view engine', 'pug');
 applyMiddleware(middleware, router);
 applyRoutes(routes, router);
 
-const { PORT = 3000 } = process.env;
+const port = process.env.NODE_ENV === 'test' ? 3001 : 3000;
 
-const server = router.listen(PORT, () => {
-  console.info(`Server is running at port ${PORT}...`);
+const server = router.listen(port, () => {
+  console.info(`Server is running at port ${port}...`);
   if (process.env.NODE_ENV === 'development') {
     console.info(`BrowserSync is listening at port 3000`);
   }
