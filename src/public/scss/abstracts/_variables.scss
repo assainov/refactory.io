@@ -1,17 +1,25 @@
 // Colors
 $color-highlight: #5163ba;
+$color-alternative: rgb(60, 194, 165);
 
 $color-text-heading: #000;
 
 $color-text-lighter: #6e7887;
 $color-text-darker: #4a5669;
 $color-text-dark-bg: #9197b9;
-$color-text-highlight: #5163ba;
+$color-text-highlight: $color-highlight;
+$color-text-alternative: $color-alternative;
 
 $color-white: #fff;
 $color-black: #000;
 
 $color-background-darkest: #1a1f35;
 
+$color-border-light: #bec9da;
 
 $color-twitter: #1DA1F2;
+
+
+// Borders
+$border-width: 4px;
+$border-width-thin: 3px;

@@ -5,10 +5,10 @@
         text-transform: uppercase;
         line-height: 3.5rem;
         padding: 1rem;
-        border: 1px solid $color-text-lighter;
+        border: $border-width-thin solid $color-border-light;
         border-radius: 2px;
-        margin-left: 1.5rem;
         font-size: 1.4rem;
+        text-decoration: none;
     }
 
     &--highlight {
@@ -17,6 +17,16 @@
         &:visited {
             border-color: $color-text-highlight;
             background-color: $color-text-highlight;
+            color: $color-white;
+        }
+    }
+
+    &--alternative {
+        &,
+        &:link,
+        &:visited {
+            border-color: $color-text-alternative;
+            background-color: $color-text-alternative;
             color: $color-white;
         }
     }
