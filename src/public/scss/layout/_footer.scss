@@ -1,0 +1,35 @@
+.footer {
+    background-color: $color-background-darkest;
+    padding: 6rem 0;
+    color: $color-text-dark-bg;
+
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+    }
+    &__about {
+        font-size: 1.4rem;
+    }
+    &__heading {
+        color: $color-white;
+    }
+    &__author {
+        &:link,
+        &:visited,
+        &:active {
+            background-color: $color-twitter;
+            padding: 2px 6px;
+            border-radius: 3px;
+            color: $color-white;
+            font-size: 1.2rem;
+            text-decoration: none;
+        }
+        &:hover {
+            background-color: lighten($color-twitter, $amount: 10);
+        }
+    }
+    &__description {
+        margin-top: 0.5rem;
+    }
+}
