@@ -1,0 +1,9 @@
+extends includes/layout
+
+include ../src/public/js/components/button/button.pug
+
+block content
+    main.input-detailed
+        div.container
+            +button({label: 'my button', onclick: `(${someFunc})()`})
+    script(type="text/javascript" src="/public/js/pages/input-detailed.bundle.js")
